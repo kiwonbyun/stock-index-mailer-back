@@ -48,7 +48,7 @@ const sendMail = async (buffer) => {
   const filename = `${Date.now()}_주가지표.xlsx`;
   const result = await nodemailer.send({
     from: 'bkw9603@gmail.com',
-    to: thisEnv === 'dev' ? 'bkw9603@gmail.com' : 'bkw9603@gmail.com',
+    to: thisEnv === 'dev' ? 'bkw9603@gmail.com' : 'juyunbok@naver.com',
     subject: '주가지표 엑셀발송',
     text: '문의는 변기원에게',
     attachments: [
