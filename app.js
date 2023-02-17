@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
 const app = express();
+const thisEnv = process.env.ENV;
 
 const port = process.env.PORT || 8000;
 app.listen(port);
@@ -10,19 +11,11 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { sendMail, genExcel, getIndex } = require('./func');
 
-const whitelist = [
-  'http://localhost:3000',
-  'http://stock-mailer.s3-website.ap-northeast-2.amazonaws.com/',
-];
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      // 만일 whitelist 배열에 origin인자가 있을 경우
-      callback(null, true); // cors 허용
-    } else {
-      callback(new Error('Not Allowed Origin!')); // cors 비허용
-    }
-  },
+  origin:
+    thisEnv === 'dev'
+      ? 'http://localhost:3000'
+      : 'http://stock-mailer.s3-website.ap-northeast-2.amazonaws.com/',
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
