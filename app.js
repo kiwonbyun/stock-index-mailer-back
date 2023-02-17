@@ -97,3 +97,7 @@ app.post('/resend', async (req, res) => {
     return res.send({ success: false });
   }
 });
+
+app.get('/', async (req, res) => {
+  return res.send('안녕');
+});
