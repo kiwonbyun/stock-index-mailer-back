@@ -17,6 +17,7 @@ const corsOptions = {
       ? 'http://localhost:3000'
       : 'http://stock-mailer.s3-website.ap-northeast-2.amazonaws.com/',
   optionsSuccessStatus: 200,
+  credentials: true,
 };
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
