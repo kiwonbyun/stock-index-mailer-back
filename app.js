@@ -12,10 +12,7 @@ const bodyParser = require('body-parser');
 const { sendMail, genExcel, getIndex } = require('./func');
 
 const corsOptions = {
-  origin:
-    thisEnv === 'dev'
-      ? 'http://localhost:3000'
-      : 'http://stock-mailer.s3-website.ap-northeast-2.amazonaws.com/',
+  origin: 'http://stock-mailer.s3-website.ap-northeast-2.amazonaws.com/',
   optionsSuccessStatus: 200,
   credentials: true,
 };
