@@ -7,9 +7,9 @@
   "description": "for my friend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "node app.js"
+    "start": "npm run dev:server",
+    "heroku-postbuild": "npm install",
+    "dev:server": "node app.js"
   },
   "author": "kiwon",
   "license": "ISC",
