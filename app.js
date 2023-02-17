@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-app.listen(8000);
+const port = process.env.PORT || 8000;
+app.listen(port);
 const urlKoreaIndex = 'https://finance.naver.com/sise/';
 const urlUSAIndex =
   'https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EB%AF%B8%EA%B5%AD+%EC%A3%BC%EA%B0%80%EC%A7%80%EC%88%98&oquery=%EB%8B%A4%EC%9A%B0%EC%A7%80%EC%88%98&tqi=h%2B2U0dp0JXVssuTEJp8ssssstDs-484662';
