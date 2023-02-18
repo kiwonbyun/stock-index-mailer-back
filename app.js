@@ -46,11 +46,3 @@ app.post('/resend', async (req, res) => {
 app.get('/', async (req, res) => {
   return res.send('안녕');
 });
-
-console.log(getIndex());
-
-const test = async () => {
-  console.log(await getIndex());
-};
-
-test();
